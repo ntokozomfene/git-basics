@@ -1,0 +1,139 @@
+#Initial commit
+
+mkdir git-basic-exercises
+cd git-basic-exercises
+ls -a
+git init
+ls -a
+git status
+touch README.md
+ls -a
+git status
+git log
+git add README.md
+git status
+git rm --cached README.md
+git status
+git add README.md
+git commit
+git status
+git add README.md
+git commit -m "initial commit"
+git log
+
+#More commits!
+nano README.md
+cat README.md
+git status
+git add README.md
+git commit -m "second commit"
+nano README.md
+cat README.md
+git status
+git add README.md
+git commit -m "third commit"
+
+#Check this out
+git log
+Copy the commit hash for your second commit. You can just select it with your mouse and right click and choose ‘copy’
+press q to exit the log view. You should now be back at the terminal
+git checkout 230c60c47
+cat README.md
+git checkout master
+cat README.md
+
+#branching
+git branch
+git branch milkshake-flavours
+git branch
+git checkout milkshake-flavours
+nano milkshakes.md
+git status
+git add milkshake.md
+git commit -m "added initial flavours"
+git log
+git checkout master
+git branch history
+git checkout history
+git log
+history > history.txt
+git add history.txt
+git commit -m "added history"
+git log
+git checkout milkshake-flavours
+git log
+nano README.md
+git add README.md
+git commit -m "random readme changes"
+git checkout history
+cat README.md
+rm README.md echo "booya" > README.md
+ls -a
+git add README.md
+git commit -m "rewrote readme"
+git checkout master
+
+#Just make sure we are still on track
+ls
+git log
+git checkout milkshake-flavours
+ls
+git log
+git checkout history
+ls
+git log
+
+#merging
+git checkout master
+git merge milkshake-flavours
+ls
+git log
+git merge history
+ls
+git log
+git checkout milkshake-flavours
+ls
+git log
+git checkout history
+git merge master
+git checkout master
+git log
+
+#Pulling and remotes
+cd ../
+cd
+#Now let’s clone a repo. point your browser here: https://github.com/Umuzi-org/tech-department
+Now there is a friendly green button that says “Clone or download”. Click on it.
+You will see a url come up. Copy it. You will need to paste it into the terminal in a moment
+git clone https://github.com/ntokozomfene/git-basic-exercises.git
+cd
+git branch
+git log
+git branch -a.
+git remote -v
+
+#Multiple Repos
+git log
+cd
+cd git-basic-exercises
+git log
+cd
+mkdir this-will-be-another-repo
+cd this-will-be-another-repo
+git init
+touch README.md
+cd
+cd git-basic-exercises
+git log
+
+#Gitignore
+touch ignore-me.db
+git status
+nano .gitignore
+git status
+ignore-me.db
+mkdir large-directory-that-should-be-local-only
+cd
+cd..\git status
+nano .gitignore
+git status
